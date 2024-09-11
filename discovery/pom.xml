@@ -10,8 +10,8 @@
     </parent>
     <groupId>zw.co.isusu.kidscastle</groupId>
     <artifactId>service-discovery</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>service-discovery</name>
+    <version>1.0.0</version>
+    <name>service-discovery-server</name>
     <description>Service Discovery</description>
     <url/>
     <licenses>
@@ -53,14 +53,21 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                    <finalName>service-discovery-server</finalName>
+                </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
